@@ -15,16 +15,10 @@
       forEachSupportedSystem = f: nixpkgs.lib.genAttrs supportedSystems (system: f {
         pkgs = import nixpkgs {
           inherit system;
-          overlays = [ self.overlays.default.${system} ];
         };
       });
     in
     {
-      overlays.default = forEachSupportedSystem ({ pkgs }:
-        final: _: {
-        inherit (self.packages.${final.system}) to-sbom;
-      });
-
       packages = forEachSupportedSystem ({ pkgs }:{
         default = self.packages.${pkgs.system}.to-sbom;
         to-sbom = pkgs.callPackage ./dist/nix { };
@@ -35,5 +29,9 @@
           inputsFrom = [ self.packages.${pkgs.system}.to-sbom ];
         };
       });
+    } // {
+      overlays.default = final: prev: {
+        inherit (self.packages.${final.system}) to-sbom;
+      };
     };
 }
