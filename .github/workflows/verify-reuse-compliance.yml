@@ -1,0 +1,17 @@
+# SPDX-FileCopyrightText: 2025 Dom Rodriguez <Dom.Rodriguez@codethink.co.uk>
+#
+# SPDX-License-Identifier: Apache-2.0
+
+name: REUSE Compliance workflow
+
+on:
+  workflow_dispatch:
+  pull_request:
+
+jobs:
+  test-reuse-compliance:
+    name: Test the commit for REUSE Compliance.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4.1.7
+      - uses: fsfe/reuse-action@v5
