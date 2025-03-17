@@ -1,0 +1,7 @@
+// SPDX-FileCopyrightText: 2025 Dom Rodriguez <Dom.Rodriguez@codethink.co.uk>
+//
+// SPDX-License-Identifier: Apache-2.0
+
+fn main() {
+    unimplemented!()
+}

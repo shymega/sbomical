@@ -12,6 +12,13 @@ repository = "https://github.com/shymega/sbomlical"
 rust-version = "1.82.0"
 version = "0.1.0"
 
+[lib]
+name = "sbomical"
+path = "src/lib.rs"
+
+[[bin]]
+name = "sbomical-cli"
+
 [dependencies]
 anyhow = "1.0.97"
 clap = { version = "4.5.32", features = ["derive", "string", "env"] }
