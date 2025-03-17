@@ -14,7 +14,7 @@ version = "0.1.0"
 
 [dependencies]
 anyhow = "1.0.97"
-clap = { version = "4.5.31", features = ["derive", "string", "env"] }
+clap = { version = "4.5.32", features = ["derive", "string", "env"] }
 env_logger = "0.11.6"
 log = "0.4.26"
 serde-cyclonedx = "0.9.1"
