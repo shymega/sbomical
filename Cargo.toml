@@ -3,12 +3,12 @@
 # SPDX-License-Identifier: Apache-2.0
 
 [package]
-name = "to-sbom"
+name = "sbomlical"
 authors = ["Dom Rodriguez <Dom.Rodriguez@codethink.co.uk>"]
-description = "Utility for scanning software projects, and generating a SPDX-compliant SBOM."
+description = "Suite for scanning software projects and generating SBOMs, as well as license reports."
 edition = "2021"
 readme = "README.md"
-repository = "https://github.com/shymega/to-sbom"
+repository = "https://github.com/shymega/sbomlical"
 rust-version = "1.82.0"
 version = "0.1.0"
 

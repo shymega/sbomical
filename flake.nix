@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: Apache-2.0
 
 { 
-  description = "Utility for scanning software projects, and generating a SPDX-compliant SBOM.";
+  description = "Suite for scanning software projects and generating SBOMs, as well as license reports.";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs?ref=nixpkgs-unstable";
@@ -20,18 +20,18 @@
     in
     {
       packages = forEachSupportedSystem ({ pkgs }:{
-        default = self.packages.${pkgs.system}.to-sbom;
-        to-sbom = pkgs.callPackage ./dist/nix { };
+        default = self.packages.${pkgs.system}.sbomical;
+        sbomical = pkgs.callPackage ./dist/nix { inherit self; };
       });
 
       devShells = forEachSupportedSystem ({ pkgs }: {
         default = pkgs.mkShell {
-          inputsFrom = [ self.packages.${pkgs.system}.to-sbom ];
+          inputsFrom = [ self.packages.${pkgs.system}.sbomical ];
         };
       });
     } // {
       overlays.default = final: prev: {
-        inherit (self.packages.${final.system}) to-sbom;
+        inherit (self.packages.${final.system}) sbomical;
       };
     };
 }
