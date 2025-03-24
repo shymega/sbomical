@@ -24,7 +24,7 @@ anyhow = "1.0.97"
 clap = { version = "4.5.32", features = ["derive", "string", "env"] }
 env_logger = "0.11.6"
 license = { version = "3.6.0", features = ["serde"] }
-log = "0.4.26"
+log = "0.4.27"
 serde = { version = "1.0.219", features = ["derive"] }
 serde-cyclonedx = "0.9.1"
 serde-spdx = "0.9.1"
