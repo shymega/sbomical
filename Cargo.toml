@@ -21,7 +21,7 @@ name = "sbomical-cli"
 
 [dependencies]
 anyhow = "1.0.97"
-clap = { version = "4.5.32", features = ["derive", "string", "env"] }
+clap = { version = "4.5.34", features = ["derive", "string", "env"] }
 env_logger = "0.11.6"
 license = { version = "3.6.0", features = ["serde"] }
 log = "0.4.27"
