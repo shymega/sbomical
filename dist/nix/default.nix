@@ -20,7 +20,7 @@ rustPlatform.buildRustPackage (finalAttrs: {
     description = "Suite for scanning software projects and generating SBOMs, as well as license reports.";
     homepage = "https://github.com/shymega/sbomical";
     license = lib.licenses.asl20;
-    maintainers = with maintainers; [shymega];
+    maintainers = with lib.maintainers; [shymega];
     mainProgram = "sbomical";
   };
 })
