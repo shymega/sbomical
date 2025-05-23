@@ -1,0 +1,21 @@
+# SPDX-FileCopyrightText: 2025 Dom Rodriguez <Dom.Rodriguez@codethink.co.uk>
+#
+# SPDX-License-Identifier: Apache-2.0
+
+name: Syft SBOMs generation workflow
+
+on:
+  workflow_dispatch:
+  push:
+  pull_request:
+
+jobs:
+  produce-syft-sboms:
+    name: Produce SBOMs using Syft.
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: anchore/sbom-action@v0
